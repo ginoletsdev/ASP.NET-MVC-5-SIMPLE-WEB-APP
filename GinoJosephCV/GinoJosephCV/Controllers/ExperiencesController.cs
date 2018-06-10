@@ -19,11 +19,22 @@ namespace GinoJosephCV.Controllers
         public ActionResult ListExperiences()
         {
             List<ExperienceModel> experiences = new List<ExperienceModel>();
-            experiences.Add(new ExperienceModel { employer = "Employer1", jobTitle = "Job Ttle1", summary = "Summary1", roles = { new ExperienceRole { roleDescription = "Description 1" }, new ExperienceRole { roleDescription = "Description 1" } } });
-            experiences.Add(new ExperienceModel { employer = "Employer2", jobTitle = "Job Ttle2", summary = "Summary2", roles = { new ExperienceRole { roleDescription = "Description 1" }, new ExperienceRole { roleDescription = "Description 2" } } });
+
+            List<ExperienceRole> Experience1Roles = new List<ExperienceRole>();
+            Experience1Roles.Add(new ExperienceRole { roleDescription = "Description1" });
+            Experience1Roles.Add(new ExperienceRole { roleDescription = "Description1Another" });
+
+            List<ExperienceRole> Experience2Roles = new List<ExperienceRole>();
+            Experience2Roles.Add(new ExperienceRole { roleDescription = "Description2" });
+            Experience2Roles.Add(new ExperienceRole { roleDescription = "Description2Another" });
+
+            ExperienceRole ExperienceRole1 = new ExperienceRole() { roleDescription = "Description1"};
+            ExperienceRole ExperienceRole2 = new ExperienceRole() { roleDescription = "Description2" };
+            experiences.Add(new ExperienceModel { employer = "Employer1", jobTitle = "Job Ttle1", summary = "Summary1", roles = Experience1Roles });
+            experiences.Add(new ExperienceModel { employer = "Employer2", jobTitle = "Job Ttle2", summary = "Summary2", roles = Experience2Roles });
 
 
-            return View();
+            return View(experiences);
         }
     }
 }

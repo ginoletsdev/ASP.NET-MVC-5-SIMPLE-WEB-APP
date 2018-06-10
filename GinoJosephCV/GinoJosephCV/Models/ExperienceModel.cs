@@ -10,7 +10,7 @@ namespace GinoJosephCV.Models
         public string employer { get; set; } = "";
         public string jobTitle { get; set; } = "";
         public string summary { get; set; } = "";
-        public List<ExperienceRole> roles;
+        public List<ExperienceRole> roles { get; set; } = null;
 
 
     }
